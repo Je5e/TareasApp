@@ -27,5 +27,19 @@ namespace TareasApp.Views
             List<Tarea> Resultado = R.ObtenerTodasLasTareas();
             ListViewTareas.ItemsSource = Resultado;
         }
+
+        private void OnItemAdded(Object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Views.TareaItemView
+            {
+                BindingContext  = new Model.Tarea()
+            });
+        }
+
+        private void ListViewItems_ItemSelected
+            (object sender, SelectedItemChangedEventArgs e)
+        {
+
+        }
     }
 }
