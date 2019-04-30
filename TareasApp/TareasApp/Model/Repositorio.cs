@@ -18,6 +18,26 @@ namespace TareasApp.Model
 
             // Instanciar la clase SQLiteConnection
             BaseDeDatos = new SQLiteConnection(DBFilePath);
+
+            BaseDeDatos.CreateTable<Tarea>();
+        }
+
+        // CRUD
+        public int CrearTarea(Tarea nuevaTarea)
+        {
+            return BaseDeDatos.Insert(nuevaTarea);
+        }
+
+        public Tarea ObtenerTareaPorID(int id)
+        {
+            // select * from Tareas where ID == id
+            return BaseDeDatos.Table<Tarea>().Where(t => t.ID == id).
+                FirstOrDefault();
+        }
+
+        public List<Tarea> ObtenerTodasLasTareas()
+        {
+            return BaseDeDatos.Table<Tarea>().ToList();
         }
     }
 }

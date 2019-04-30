@@ -11,7 +11,7 @@ namespace TareasApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Views.TareasListView());
         }
 
         protected override void OnStart()
