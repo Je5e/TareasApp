@@ -39,7 +39,12 @@ namespace TareasApp.Views
         private void ListViewItems_ItemSelected
             (object sender, SelectedItemChangedEventArgs e)
         {
-
+            Tarea Tarea = e.SelectedItem as Tarea;
+            if (Tarea !=null)
+            {
+                Navigation.PushAsync
+                    (new TareaItemView { BindingContext = Tarea });
+            }
         }
     }
 }

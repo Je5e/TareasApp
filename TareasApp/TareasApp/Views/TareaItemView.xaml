@@ -4,9 +4,21 @@
              x:Class="TareasApp.Views.TareaItemView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Nombre:"/>
+            <Entry Text="{Binding Nombre}"
+                   Placeholder="Enter Name"/>
+            <Label Text="Nota:" />
+            <Entry Text="{Binding Notas}"
+                   Placeholder="Enter Notes"/>
+            <Label Text="Estado:"/>
+            <Switch IsToggled="{Binding Estado}"/>
+            
+            <!-- Botones   -->
+            <Button
+                Text="Agregar nueva tarea"
+                Clicked="OnTodoItemAdded_Clicked"/>
+            <Button Text="Actualizar" x:Name="btnActualizar"
+                    Clicked="BtnActualizar_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
