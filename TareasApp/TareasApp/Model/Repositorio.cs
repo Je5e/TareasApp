@@ -39,5 +39,15 @@ namespace TareasApp.Model
         {
             return BaseDeDatos.Table<Tarea>().ToList();
         }
+
+        public int ActualizarTarea(Tarea tareaAActualizar)
+        {
+            return BaseDeDatos.Update(tareaAActualizar);
+            
+        }
+        public int EliminarTarea(Tarea tareaAEliminar)
+        {
+          return  BaseDeDatos.Delete(tareaAEliminar);
+        }
     }
 }

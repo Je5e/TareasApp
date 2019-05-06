@@ -37,7 +37,18 @@ namespace TareasApp.Views
 
         private void BtnActualizar_Clicked(object sender, EventArgs e)
         {
+            Tarea Item = (Tarea)BindingContext;
+            Repositorio R = new Repositorio();
+            int Resultado = R.ActualizarTarea(Item);
+            Navigation.PopAsync();
+        }
 
+        private void BtnEliminar_Clicked(object sender, EventArgs e)
+        {
+            Tarea Eli =  (Tarea)BindingContext;
+            Repositorio E = new Repositorio();
+            int Resultado = E.EliminarTarea(Eli);
+            Navigation.PopAsync();
         }
     }
 }

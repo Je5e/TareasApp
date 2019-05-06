@@ -19,6 +19,9 @@
                 Clicked="OnTodoItemAdded_Clicked"/>
             <Button Text="Actualizar" x:Name="btnActualizar"
                     Clicked="BtnActualizar_Clicked"/>
+            <Button x:Name="btnEliminar" Text="Eliminar"
+                    Clicked="BtnEliminar_Clicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
